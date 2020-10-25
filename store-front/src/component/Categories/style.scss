@@ -1,0 +1,16 @@
+ul {
+    text-align: center;
+}
+.linkStyle{
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 4em;
+    margin-left: 3em;
+  
+    cursor: pointer;
+    font-size: 2em;
+    &:hover {
+        background:#cf2626;
+        color: beige;
+      }
+}
