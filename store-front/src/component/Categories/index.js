@@ -10,14 +10,14 @@ import './style.scss';
 function Categories(props) {
     return (
         <section>
-            <Typography variant="h3" component="h3" >
+            <Typography variant="h3" component="h1" >
                 Browes Our Categories
             </Typography>
             <ul>
                 {
                     props.categories.categories.map(category => {
                         return (
-                            <li className="{category.name}, linkStyle" key={category.name} onClick={() => props.active(category.name)}>
+                            <li className="{category.name} linkStyle" key={category.name} onClick={() => props.active(category.name)}>
                                 {category.displayName}
                             </li>
                         )

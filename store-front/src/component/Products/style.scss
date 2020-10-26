@@ -1,4 +1,35 @@
 img{
-    width: 30em;
-    height: 30em;
+    width: 25em;
+    height: 25em;
+    margin-right: 2em;
 }
+.contaneir{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+.imgCard {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 3em;
+  }
+  
+  .imgCard img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  .nameCard{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(5, 8, 8);
+    font-size: 3.5em;
+    text-align: center;
+  }
+
+  .priceCard{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+    color: rgb(104, 43, 43);
+    text-align: center;
+
+  }
