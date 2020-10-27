@@ -1,25 +1,10 @@
-// import React from 'react';
-// import Navbar from 'react-bootstrap/Navbar';
-// import Nav from 'react-bootstrap/Nav';
-// import { Card } from '@material-ui/core';
-// function Header (){
-//     return (
-//         <Card bg="light" variant="light">
-//         <Card className="mr-auto">
-//           <Nav.Link href="#home" >Front Store</Nav.Link>
-//         </Card>
-//       </Card>
-//     )
-// }
-// export default Header;
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import {connect} from 'react-redux';
+import  './style.scss'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+function Header(props) {
   const classes = useStyles();
 
   return (
@@ -46,9 +31,16 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             Asura Front Store
           </Typography>
-          <Button color="inherit">Cart(0)</Button>
+          <a className='cart' href="#">CART({props.cart.cart.length})</a>
         </Toolbar>
       </AppBar>
     </div>
   );
 }
+
+const mapStateToProps = (state) =>{
+  return {cart : state.Cart}
+} 
+
+export default connect(mapStateToProps  )(Header);
+
