@@ -1,29 +1,35 @@
 const initialState = {
-    categories : [
+    categories: [
         { name: 'electronics', displayName: 'Elecronics' },
-        { name: 'food', displayName: 'Food' }, 
+        { name: 'food', displayName: 'Food' },
         { name: 'house', displayName: 'Houses' }
-        
+
     ],
-    activeCategory : '',
+    activeCategory: '',
 }
 
 
-export default (state = initialState ,action) =>{
-    const { type , payload } = action;
-    switch(type){
-        case 'ACTIVE' :
-            const categories = state.categories;
+export default (state = initialState, action) => {
+    const { type, payload } = action;
+    let categories = state.categories;
+    switch (type) {
+        case 'ACTIVE':
+            // categories = state.categories;
             const activeCategory = payload;
-            return {categories , activeCategory}
-        default :
-        return state;
+            return { categories, activeCategory }
+        case 'GET':
+            categories = payload.result;
+            console.log('>????????????????', payload);
+            return { categories }
+
+        default:
+            return state;
     }
 }
 
-export const active = (categoryName) =>{
+export const active = (categoryName) => {
     return {
-        type : 'ACTIVE',
-        payload : categoryName
+        type: 'ACTIVE',
+        payload: categoryName
     }
 }

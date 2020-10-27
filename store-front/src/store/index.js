@@ -1,8 +1,10 @@
 // store index.js =-> combine reducers
 // create and export my store 
 
-import {createStore, combineReducers} from 'redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
+import ReduxThunk from 'redux-thunk'
 // to enable the chrome extension for redux
 // import { composeWithDevTools } from 'redux-devtools-extension';
 import Categories from './reducers/categories';
@@ -13,8 +15,8 @@ import Cart from './reducers/cart';
 let reducers = combineReducers({Categories, Products, Cart});
 
 const store = () => {
-    // return createStore(reducers, composeWithDevTools())
-    return createStore(reducers)
+    return createStore(reducers, composeWithDevTools(applyMiddleware(ReduxThunk)))
+    // return createStore(reducers)
 }
 
 export default store();
