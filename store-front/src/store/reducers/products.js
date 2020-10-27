@@ -11,6 +11,7 @@ const initialState = {
         { name: 'Norway House', category: 'house', price: '7,000,000$', inStock: 1 ,img:'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' },
     ],
 }
+
 export default (state = initialState ,action) =>{
     const { type , payload } = action;
     switch(type){
